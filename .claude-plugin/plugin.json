@@ -1,0 +1,20 @@
+{
+  "name": "lutherskills",
+  "description": "Interactive learning engine for embedded programming, electrical engineering, and networking — profile your level, get quizzed, solve hands-on challenges, level up",
+  "version": "0.1.0",
+  "author": {
+    "name": "Lutherwaves"
+  },
+  "homepage": "https://github.com/Lutherwaves/lutherskills",
+  "repository": "https://github.com/Lutherwaves/lutherskills",
+  "license": "MIT",
+  "keywords": [
+    "learning",
+    "embedded",
+    "electrical-engineering",
+    "networking",
+    "skills",
+    "interactive",
+    "quizzes"
+  ]
+}
