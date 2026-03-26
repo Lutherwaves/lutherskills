@@ -1,6 +1,6 @@
 ---
 name: magic
-description: Use when you want a surprise learning challenge — randomly picks between deep-dive into obscure topics, cross-domain fusion challenges, or reverse engineering mysteries
+description: Use when you want a surprise learning challenge — something unexpected, obscure, or cross-domain to break routine and test your skills
 ---
 
 # Magic — Surprise Challenges
@@ -41,7 +41,7 @@ Steps:
 2. Find the real story behind it
 3. Create a lesson + challenge that teaches the underlying technical concept
 
-Announce: **"Down the rabbit hole..."**
+Announce: **"DEEP DIVE — Down the rabbit hole..."**
 
 #### Mode 2: Cross-Domain Fusion
 
@@ -57,7 +57,7 @@ Steps:
 2. WebSearch for real-world applications at that intersection
 3. Create a challenge that requires knowledge from both domains
 
-Announce: **"Where worlds collide..."**
+Announce: **"FUSION — Where worlds collide..."**
 
 #### Mode 3: Reverse Engineering
 
@@ -73,7 +73,7 @@ Steps:
 2. Find something genuinely puzzling but solvable
 3. Strip all context and present as mystery
 
-Announce: **"What is this thing?"**
+Announce: **"MYSTERY — What is this thing?"**
 
 ### Step 4: Create Challenge
 

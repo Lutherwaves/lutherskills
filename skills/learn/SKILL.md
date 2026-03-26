@@ -1,6 +1,6 @@
 ---
 name: learn
-description: Use when ready to learn — starts a focused session on a topic, researches current material online, teaches concepts, then creates hands-on coding challenges and reviews your solutions
+description: Use when ready to study a topic — embedded programming, electrical engineering, or networking — at your current skill level with hands-on challenges
 ---
 
 # Learn — Interactive Learning Session
@@ -13,8 +13,6 @@ The main learning engine. Picks a topic at your level, researches accurate conte
 
 `/lutherskills:learn` — auto-pick best topic
 `/lutherskills:learn embedded-programming` — specific topic
-`/lutherskills:learn networking fundamentals` — specific sub-topic
-
 ## Flow
 
 ### Step 1: Load Profile
@@ -28,7 +26,7 @@ Identify:
 
 ### Step 2: Select Topic
 
-If the user provided a topic arg:
+If the user provided a topic arg (e.g., `/lutherskills:learn embedded-programming`):
 - Use that topic
 - Pick the lowest-level unlocked sub-topic within it
 
