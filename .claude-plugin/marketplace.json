@@ -1,0 +1,12 @@
+{
+  "name": "lutherskills",
+  "owner": {
+    "name": "Lutherwaves"
+  },
+  "plugins": [
+    {
+      "name": "lutherskills",
+      "source": "./"
+    }
+  ]
+}

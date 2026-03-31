@@ -5,7 +5,11 @@ Interactive learning engine for Claude Code. Learn embedded programming, electri
 ## Install
 
 ```bash
-claude plugin add Lutherwaves/lutherskills
+# Step 1: Add the marketplace
+/plugin marketplace add Lutherwaves/lutherskills
+
+# Step 2: Install the plugin
+/plugin install lutherskills@Lutherwaves-lutherskills
 ```
 
 ## Skills
