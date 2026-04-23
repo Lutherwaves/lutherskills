@@ -1,7 +1,7 @@
 {
   "name": "lutherskills",
   "description": "Interactive learning engine for embedded programming, electrical engineering, networking, and language internals (Go, Python, TypeScript, JS engines) — profile your level, get quizzed, solve hands-on challenges, level up",
-  "version": "0.2.0",
+  "version": "0.2.1",
   "author": {
     "name": "Lutherwaves"
   },
