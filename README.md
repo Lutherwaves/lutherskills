@@ -1,6 +1,6 @@
 # lutherskills
 
-Interactive learning engine for Claude Code. Learn embedded programming, electrical engineering, and networking through personalized quizzes and hands-on challenges.
+Interactive learning engine for Claude Code. Learn embedded programming, electrical engineering, networking, and programming language internals (Go, Python, TypeScript, JS engines) through personalized quizzes and hands-on challenges.
 
 ## Install
 
@@ -20,8 +20,17 @@ Interactive learning engine for Claude Code. Learn embedded programming, electri
 - `/lutherskills:progress [topic]` — View your stats and recommendations
 - `/lutherskills:magic` — Surprise challenge (deep-dive, fusion, or reverse engineering)
 
-## Topics (v1)
+## Topics
 
-- Electrical Engineering
-- Embedded Programming
-- Networking
+**Hardware & systems (v0.1)**
+- Electrical Engineering — fundamentals, analog circuits, digital logic, PCB/practical
+- Embedded Programming — C fundamentals, bare metal, peripherals, RTOS, lower level
+- Networking — fundamentals, protocols, hands-on, infrastructure
+
+**Language internals (v0.2)**
+- Go Internals — fundamentals, runtime (GMP/scheduler), GC & allocator, compiler & SSA
+- Python Internals — fundamentals, bytecode & ceval, GC & GIL, C extensions
+- TypeScript Internals — fundamentals, compiler pipeline, type system, tooling
+- JS Engine Internals — fundamentals, V8 objects, JIT pipeline, GC
+
+Language-internals topics favor reading real runtime/compiler source and implementing minimal toy versions over multiple-choice. See `challenges/<topic>/resources.md` in your learning workspace for curated primary sources.

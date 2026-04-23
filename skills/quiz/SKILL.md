@@ -14,6 +14,10 @@ Rapid-fire multiple choice questions for quick learning sessions. No projects, n
 `/lutherskills:quiz` — 10 questions across all your topics
 `/lutherskills:quiz embedded-programming` — 10 questions on embedded only
 `/lutherskills:quiz networking 5` — 5 questions on networking
+`/lutherskills:quiz golang-internals` — 10 questions on Go internals
+`/lutherskills:quiz python-internals 5` — 5 questions on Python internals
+
+Works with any topic in `profile.json` — no hardcoded list.
 
 ## Flow
 

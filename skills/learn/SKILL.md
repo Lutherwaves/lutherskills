@@ -155,9 +155,22 @@ Sub-topics unlock top-to-bottom within each topic:
 **Electrical Engineering:** fundamentals → analog-circuits → digital-logic → pcb-practical
 **Embedded Programming:** c-fundamentals → bare-metal → peripherals → rtos-concepts → lower-level
 **Networking:** fundamentals → protocols → hands-on → infrastructure
+**Go Internals:** fundamentals → runtime → gc-allocator → compiler-ssa
+**Python Internals:** fundamentals → bytecode-ceval → gc-gil → c-extensions
+**TypeScript Internals:** fundamentals → compiler-pipeline → type-system → tooling
+**JS Engine Internals:** fundamentals → v8-objects → jit-pipeline → gc
 
 A sub-topic unlocks when the one above it reaches "beginner" level.
 The first sub-topic in each topic is always unlocked.
+
+## Language-Internals Guidance
+
+For `golang-internals`, `python-internals`, `typescript-internals`, and `js-engine-internals` topics, adapt the flow:
+
+- **Research step**: prefer primary sources over tutorials. Link to actual runtime/compiler source files (e.g., `src/runtime/proc.go`, `Python/ceval.c`, `src/compiler/checker.ts`, V8 blog). Cite commit SHAs or version tags when referencing source.
+- **Challenge shape**: favor "read this specific function, annotate what it does, then implement a minimal version" over multiple-choice or small code tasks. Target 50-200 line toy implementations that capture the essential mechanism (e.g., mark-sweep GC, Pratt parser, hidden-class object, GIL-aware refcount).
+- **Two-artifact output**: challenge solutions should produce both (a) source-reading notes in `notes/<topic>/<slug>.md` with file+line citations, and (b) a toy implementation in `projects/<topic>/<slug>/` that the user runs and tests.
+- **Seed anchors**: check `challenges/<topic>/resources.md` for curated links before researching — start there, then augment with WebSearch if needed.
 
 ## Common Mistakes
 

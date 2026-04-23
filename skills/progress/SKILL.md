@@ -24,6 +24,8 @@ Read `profile.json`. If not found, direct to `/lutherskills:init`.
 
 **Full overview (no topic arg):**
 
+Iterate over every top-level topic present in `profile.json` — do NOT hardcode topic names. For each topic, render a section with its sub-topics in the order they appear in the file. Mark sub-topics as locked if their prereq (the one listed before them in the sub_topics object) hasn't reached "beginner".
+
 ```
 === LutherSkills Progress ===
 Name: [name]
@@ -31,27 +33,16 @@ Active for: [days since created] days
 Streak: [N] days
 Last active: [date]
 
---- Electrical Engineering: [overall level] ---
-  Fundamentals:     [level] (####...... 5 challenges, avg 0.85)
-  Analog circuits:  [level] (##........ 1 challenge, avg 0.70)
-  Digital logic:    [locked/level]
-  PCB/practical:    [locked/level]
+--- <Topic display name>: [overall level] ---
+  <Sub-topic display name>:  [level] (####...... N challenges, avg 0.XX)
+  ...
 
---- Embedded Programming: [overall level] ---
-  C fundamentals:   [level] (####...... 3 challenges, avg 0.80)
-  Bare metal:       [level]
-  Peripherals:      [locked/level]
-  RTOS concepts:    [locked/level]
-  Lower level:      [locked/level]
-
---- Networking: [overall level] ---
-  Fundamentals:     [level]
-  Protocols:        [locked/level]
-  Hands-on:         [locked/level]
-  Infrastructure:   [locked/level]
+(repeat per topic in profile.json)
 
 Totals: [N] challenges | [N] quizzes | [N] magic points
 ```
+
+Display-name rule: convert `kebab-case` topic/sub-topic slugs to Title Case for display (e.g., `golang-internals` → "Go Internals", `gc-allocator` → "GC & Allocator"). Use natural English where slug is terse.
 
 Progress bars: `#` = challenges completed out of 3 needed for level-up. 10 chars wide.
 

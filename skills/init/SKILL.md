@@ -37,7 +37,11 @@ Ask these questions **one at a time**, wait for each answer:
    - A) Electrical Engineering
    - B) Embedded Programming
    - C) Networking
-   - D) All of the above
+   - D) Go Internals (runtime, GC, scheduler, compiler)
+   - E) Python Internals (CPython bytecode, GIL, object model, C API)
+   - F) TypeScript Internals (compiler pipeline, type system, tooling)
+   - G) JS Engine Internals (V8 objects, JIT, event loop, GC)
+   - H) All of the above
    (Also accept free-form topics — store them for future expansion)
 
 3. **For each selected topic, ask sub-topic self-assessment:**
@@ -60,6 +64,30 @@ Ask these questions **one at a time**, wait for each answer:
    - "Protocols (HTTP, DNS, DHCP, ARP, ICMP)?"
    - "Hands-on (socket programming, packet analysis)?"
    - "Infrastructure (routing, switching, VLANs, subnetting)?"
+
+   For Go Internals:
+   - "Fundamentals (memory model, slice/map/string layout, escape analysis)?"
+   - "Runtime (GMP scheduler, goroutines, channel internals)?"
+   - "GC & allocator (tri-color mark, mcache/mcentral/mheap, write barriers)?"
+   - "Compiler & SSA (go/parser, AST, SSA passes, codegen)?"
+
+   For Python Internals:
+   - "Fundamentals (PyObject, refcount, object model, dict impl)?"
+   - "Bytecode & ceval (dis module, ceval.c loop, frame objects)?"
+   - "GC & GIL (cyclic GC, GIL, PEP 703, PEP 659 adaptive interpreter)?"
+   - "C extensions (C API, capsules, buffer protocol)?"
+
+   For TypeScript Internals:
+   - "Fundamentals (structural typing, widening/narrowing, inference)?"
+   - "Compiler pipeline (scanner → parser → binder → checker → emitter)?"
+   - "Type system (conditional types, variance, mapped types)?"
+   - "Tooling (language service, incremental builds, project references)?"
+
+   For JS Engine Internals:
+   - "Fundamentals (event loop, microtasks, call stack, value representation)?"
+   - "V8 objects (hidden classes/shapes, inline caches, SMI tagging)?"
+   - "JIT pipeline (Ignition → Sparkplug → Maglev → TurboFan, deopt)?"
+   - "GC (Scavenger, Mark-Compact, incremental marking)?"
 
 4. **"How do you prefer to learn?"**
    - A) Theory first, then practice
@@ -127,11 +155,16 @@ Only include topics the user selected. Sub-topic structure per topic:
 **electrical-engineering:** fundamentals, analog-circuits, digital-logic, pcb-practical
 **embedded-programming:** c-fundamentals, bare-metal, peripherals, rtos-concepts, lower-level
 **networking:** fundamentals, protocols, hands-on, infrastructure
+**golang-internals:** fundamentals, runtime, gc-allocator, compiler-ssa
+**python-internals:** fundamentals, bytecode-ceval, gc-gil, c-extensions
+**typescript-internals:** fundamentals, compiler-pipeline, type-system, tooling
+**js-engine-internals:** fundamentals, v8-objects, jit-pipeline, gc
 
-Create directories:
+Create directories (only for selected topics):
 ```bash
-mkdir -p challenges/electrical-engineering challenges/embedded-programming challenges/networking challenges/magic projects notes
+mkdir -p challenges/<topic> projects notes
 ```
+Baseline set always created: `challenges/magic`, `projects/`, `notes/`.
 
 Create `.gitignore`:
 ```
