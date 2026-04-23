@@ -1,5 +1,9 @@
 # lutherskills
 
+[![Release](https://github.com/Lutherwaves/lutherskills/actions/workflows/release.yml/badge.svg)](https://github.com/Lutherwaves/lutherskills/actions/workflows/release.yml)
+[![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](LICENSE)
+[![Conventional Commits](https://img.shields.io/badge/Conventional%20Commits-1.0.0-yellow.svg)](https://www.conventionalcommits.org)
+
 Interactive learning engine for Claude Code. Learn embedded programming, electrical engineering, networking, and programming language internals (Go, Python, TypeScript, JS engines) through personalized quizzes and hands-on challenges.
 
 ## Install

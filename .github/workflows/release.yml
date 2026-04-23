@@ -1,85 +1,19 @@
-name: release
+name: release-please
 
 on:
   push:
     branches: [main]
-    paths:
-      - '.claude-plugin/plugin.json'
 
 permissions:
   contents: write
+  pull-requests: write
 
 jobs:
-  tag-and-release:
+  release-please:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4
+      - uses: googleapis/release-please-action@v4
         with:
-          fetch-depth: 0
-
-      - name: Read plugin version
-        id: version
-        run: |
-          VERSION=$(jq -r .version .claude-plugin/plugin.json)
-          if [ -z "$VERSION" ] || [ "$VERSION" = "null" ]; then
-            echo "No version found in plugin.json" >&2
-            exit 1
-          fi
-          echo "version=$VERSION" >> "$GITHUB_OUTPUT"
-          echo "tag=v$VERSION" >> "$GITHUB_OUTPUT"
-
-      - name: Check if tag already exists
-        id: check
-        env:
-          TAG: ${{ steps.version.outputs.tag }}
-        run: |
-          if git rev-parse "$TAG" >/dev/null 2>&1; then
-            echo "exists=true" >> "$GITHUB_OUTPUT"
-            echo "Tag $TAG already exists — skipping release."
-          else
-            echo "exists=false" >> "$GITHUB_OUTPUT"
-          fi
-
-      - name: Create tag
-        if: steps.check.outputs.exists == 'false'
-        env:
-          TAG: ${{ steps.version.outputs.tag }}
-        run: |
-          git tag "$TAG"
-          git push origin "$TAG"
-
-      - name: Create GitHub release with auto-generated notes
-        if: steps.check.outputs.exists == 'false'
-        env:
-          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          TAG: ${{ steps.version.outputs.tag }}
-        run: |
-          gh release create "$TAG" --title "$TAG" --generate-notes
-
-      - name: Update CHANGELOG.md
-        if: steps.check.outputs.exists == 'false'
-        env:
-          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          TAG: ${{ steps.version.outputs.tag }}
-        run: |
-          DATE=$(date -u +%Y-%m-%d)
-          NOTES=$(gh release view "$TAG" --json body --jq .body)
-
-          {
-            echo "# Changelog"
-            echo
-            echo "## $TAG — $DATE"
-            echo
-            echo "$NOTES"
-            echo
-            if [ -f CHANGELOG.md ]; then
-              tail -n +2 CHANGELOG.md
-            fi
-          } > CHANGELOG.new.md
-          mv CHANGELOG.new.md CHANGELOG.md
-
-          git config user.name "github-actions[bot]"
-          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add CHANGELOG.md
-          git commit -m "chore: update CHANGELOG for $TAG [skip ci]" || exit 0
-          git push origin main
+          token: ${{ secrets.GITHUB_TOKEN }}
+          config-file: release-please-config.json
+          manifest-file: .release-please-manifest.json
